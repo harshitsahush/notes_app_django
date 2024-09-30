@@ -28,3 +28,7 @@ def home(request):
     all_notes = note.objects.all()
 
     return render(request, "all_notes.html", {"form" : form, "content" : all_notes})
+
+def full_note(request, note_id):
+    fetched_note = note.objects.get(pk = note_id)
+    return render(request, "note_detail_page.html", {"note" : fetched_note})

@@ -14,10 +14,10 @@
 
     <div>
         {% if content %}
+            <br>
             {% for note in content %}
-                <b>{{note.title}}</b>
+                <a href = "{% url "note_detail" note.id %}"><b>{{note.title}}</b></a>
                 <br>
-                {{note.content}}
                 <br>
             {% endfor %}
         {% endif %}
