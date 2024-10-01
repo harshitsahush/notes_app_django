@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from .forms import NotesForm
 from .models import note
@@ -32,3 +32,10 @@ def home(request):
 def full_note(request, note_id):
     fetched_note = note.objects.get(pk = note_id)
     return render(request, "note_detail_page.html", {"note" : fetched_note})
+
+def note_delete(request, note_id):
+    #delete note
+    fetched_note = note.objects.get(pk = note_id)
+    fetched_note.delete()
+    #now redirect to the all notes page
+    return redirect("/notes/")

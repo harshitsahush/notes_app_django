@@ -17,6 +17,8 @@
             <br>
             {% for note in content %}
                 <a href = "{% url "note_detail" note.id %}"><b>{{note.title}}</b></a>
+                &nbsp;
+                <a href = "{% url "note_delete" note.id %}"><b>Delete</b></a>
                 <br>
                 <br>
             {% endfor %}
