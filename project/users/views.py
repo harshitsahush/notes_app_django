@@ -59,4 +59,4 @@ def user_signup(request):
 
 def user_signout(request):
     request.session.flush()
-    return redirect("login/")
+    return redirect("/users/login/")
