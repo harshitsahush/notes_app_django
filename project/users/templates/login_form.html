@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <form method = "POST">
+        {% csrf_token %}
+        {{form}}
+        <br>
+        <button type="submit">Login</button>
+    </form>
+    {% if message %}
+        <p style="color:red">{{message}}</p>
+    {% endif %}
+
+    <a href="{% url "user_signup" %}">Signup instead</a>
+</body>
+</html>

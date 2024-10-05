@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.home),
     path("notes/", include("notes.urls")),
+    path("users/", include("users.urls")),
 ]
